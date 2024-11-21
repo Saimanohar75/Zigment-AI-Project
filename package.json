@@ -1,0 +1,99 @@
+{
+  "name": "ts-json-schema-generator",
+  "version": "2.0.0",
+  "description": "Generate JSON schema from your Typescript sources",
+  "keywords": [
+    "ts",
+    "typescript",
+    "json",
+    "schema",
+    "jsonschema"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vega/ts-json-schema-generator.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Alexander Evtushenko",
+    "email": "aevtushenko@xiag.ch"
+  },
+  "contributors": [
+    {
+      "name": "Dominik Moritz",
+      "email": "domoritz@gmail.com"
+    },
+    {
+      "name": "MooYeol Prescott Lee",
+      "email": "mooyoul@gmail.com"
+    }
+  ],
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "ts-json-schema-generator": "bin/ts-json-schema-generator.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "factory",
+    "index.*",
+    "ts-json-schema-generator.*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "debug": "tsx --inspect-brk ts-json-schema-generator.ts",
+    "format": "eslint --fix",
+    "lint": "eslint",
+    "prepublishOnly": "yarn build",
+    "release": "yarn build && auto shipit",
+    "run": "tsx ts-json-schema-generator.ts",
+    "test": "jest test/ --verbose",
+    "test:coverage": "yarn jest test/ --collectCoverage=true",
+    "test:fast": "cross-env FAST_TEST=1 jest test/ --verbose",
+    "test:update": "cross-env UPDATE_SCHEMA=true yarn test:fast",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@types/json-schema": "^7.0.15",
+    "commander": "^12.1.0",
+    "glob": "^11.0.0",
+    "json5": "^2.2.3",
+    "normalize-path": "^3.0.0",
+    "safe-stable-stringify": "^2.5.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@auto-it/conventional-commits": "^11.3.0",
+    "@auto-it/first-time-contributor": "^11.3.0",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/js": "^9.15.0",
+    "@types/eslint": "^9.6.1",
+    "@types/glob": "^8.1.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.0",
+    "@types/normalize-path": "^3.0.2",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "auto": "^11.3.0",
+    "chai": "^5.1.2",
+    "cross-env": "^7.0.3",
+    "eslint": "9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.2",
+    "typescript-eslint": "^8.14.0",
+    "vega": "^5.30.0",
+    "vega-lite": "^5.21.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

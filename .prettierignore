@@ -1,0 +1,4 @@
+package.json
+test/valid-data/**/*.json
+babel.config.cjs
+jest.config.cjs
